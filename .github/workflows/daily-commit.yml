@@ -2,7 +2,7 @@ name: Daily Commit
 
 on:
   schedule:
-    - cron: "0 4 * * *" # هر روز ساعت 4 صبح UTC (ساعت ایران حدود 8:30 صبح)
+    - cron: "0 4 * * *" # هر روز ساعت 4 صبح UTC
   workflow_dispatch:
 
 jobs:
@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
       - name: Make a change
         run: |
