@@ -1,0 +1,25 @@
+name: Daily Commit
+
+on:
+  schedule:
+    - cron: '0 4 * * *'  # هر روز ساعت 4 صبح UTC (ساعت ایران حدود 8:30 صبح)
+  workflow_dispatch:
+
+jobs:
+  commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Make a change
+        run: |
+          echo "$(date) - commit by GitHub Actions" >> log.txt
+
+      - name: Commit changes
+        run: |
+          git config user.name "green-bot"
+          git config user.email "green@example.com"
+          git add log.txt
+          git commit -m "daily commit - $(date)" || echo "nothing to commit"
+          git push
