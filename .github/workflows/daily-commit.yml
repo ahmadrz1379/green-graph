@@ -2,7 +2,7 @@ name: Daily Commit
 
 on:
   schedule:
-    - cron: "0 4 * * *" # هر روز ساعت 4 صبح UTC
+    - cron: "0 5 * * *" # هر روز ساعت 4 صبح UTC
   workflow_dispatch:
 
 jobs:
@@ -20,8 +20,8 @@ jobs:
 
       - name: Commit changes
         run: |
-          git config user.name "green-bot"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "ahmadrz1379"
+          git config user.email "aahmadrezarezaee@gmail.com"
           git add .
           git commit -m "daily commit - $(date)" || echo "nothing to commit"
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} HEAD:main
