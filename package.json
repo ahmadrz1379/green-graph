@@ -1,0 +1,10 @@
+{
+  "name": "green-graph",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "generate": "python scripts/generate_activity.py",
+    "start": "python -m http.server 8000",
+    "test": "python scripts/generate_activity.py && node -e \"const fs = require('fs'); const data = JSON.parse(fs.readFileSync('activity.json', 'utf8')); if (!data.summary || !Array.isArray(data.heatmap) || !Array.isArray(data.monthBreakdown)) throw new Error('Invalid activity.json'); console.log('activity.json verified');\""
+  }
+}

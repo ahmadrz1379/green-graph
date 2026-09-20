@@ -2,8 +2,11 @@ name: Daily Commit
 
 on:
   schedule:
-    - cron: "0 6 * * *" # هر روز ساعت 4 صبح UTC
+    - cron: "0 6 * * *"
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   commit:
@@ -12,16 +15,31 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          persist-credentials: false
+          fetch-depth: 1
 
-      - name: Make a change
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Update repository pulse
         run: |
-          echo "$(date) - commit by GitHub Actions" >> log.txt
+          set -euo pipefail
+          today="$(date -u '+%a %b %-d %Y')"
+          if ! grep -qF -- "$today" log.txt; then
+            printf '%s - commit by GitHub Actions\n' "$(date -u '+%a %b %-d %H:%M:%S UTC %Y')" >> log.txt
+          fi
+          python scripts/generate_activity.py
 
       - name: Commit changes
         run: |
+          set -euo pipefail
           git config user.name "ahmadrz1379"
           git config user.email "aahmadrezarezaee@gmail.com"
           git add .
-          git commit -m "daily commit - $(date)" || echo "nothing to commit"
-          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} HEAD:main
+          if git diff --cached --quiet; then
+            echo "No repository changes to commit."
+            exit 0
+          fi
+          git commit -m "daily green update - $(date -u '+%Y-%m-%d')"
+          git push origin HEAD:main

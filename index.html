@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Green Graph Dashboard</title>
+    <meta
+      name="description"
+      content="A polished dashboard tracking daily GitHub activity, contribution streaks, and momentum."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand-block">
+          <div class="brand-mark">G</div>
+          <div>
+            <p class="eyebrow">Project pulse</p>
+            <h1>Green Graph</h1>
+          </div>
+        </div>
+        <a class="repo-link" href="https://github.com/ahmadrz1379/green-graph" target="_blank" rel="noreferrer">
+          View repo
+        </a>
+      </header>
+
+      <main class="dashboard">
+        <section class="hero">
+          <div class="hero-copy">
+            <p class="eyebrow">Daily automation ritual</p>
+            <h2>Keep the graph green.</h2>
+            <p class="detail-text">
+              Every sunrise triggers a tiny commit to keep the repository alive, visible, and active.
+            </p>
+            <div class="pill-row">
+              <span class="status-pill">Live repo pulse</span>
+              <span class="status-pill accent" id="status-pill">Loading…</span>
+            </div>
+          </div>
+
+          <div class="hero-panel">
+            <div class="mini-stat">
+              <span>Current streak</span>
+              <strong id="metric-currentStreak">--</strong>
+            </div>
+            <div class="mini-stat">
+              <span>Best streak</span>
+              <strong id="metric-bestStreak">--</strong>
+            </div>
+            <div class="mini-stat">
+              <span>Last commit</span>
+              <strong id="metric-lastCommit">--</strong>
+            </div>
+          </div>
+        </section>
+
+        <section class="metrics-grid" aria-label="Summary metrics">
+          <article class="metric-card">
+            <p>Total commits</p>
+            <strong id="metric-totalCommits">--</strong>
+          </article>
+          <article class="metric-card">
+            <p>Active days</p>
+            <strong id="metric-activeDays">--</strong>
+          </article>
+          <article class="metric-card">
+            <p>Avg / active day</p>
+            <strong id="metric-average">--</strong>
+          </article>
+          <article class="metric-card">
+            <p>Momentum</p>
+            <strong id="metric-momentum">--</strong>
+          </article>
+        </section>
+
+        <section class="content-grid">
+          <article class="panel">
+            <div class="panel-header">
+              <h3>Contribution heatmap</h3>
+              <span id="heatmap-range">Last 8 weeks</span>
+            </div>
+            <div id="heatmap" class="heatmap" aria-label="Daily contribution chart"></div>
+          </article>
+
+          <article class="panel">
+            <div class="panel-header">
+              <h3>Monthly momentum</h3>
+              <span>By month</span>
+            </div>
+            <div id="monthly-bars" class="monthly-bars" aria-label="Monthly contribution bars"></div>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
