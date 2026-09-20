@@ -1,4 +1,4 @@
-name: Daily Commit
+name: Green Graph Garden
 
 on:
   schedule:
@@ -9,37 +9,39 @@ permissions:
   contents: write
 
 jobs:
-  commit:
+  grow:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout repo
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
-      - name: Update repository pulse
+      - name: Grow the graph and refresh dashboard data
         run: |
           set -euo pipefail
-          today="$(date -u '+%a %b %-d %Y')"
-          if ! grep -qF -- "$today" log.txt; then
-            printf '%s - commit by GitHub Actions\n' "$(date -u '+%a %b %-d %H:%M:%S UTC %Y')" >> log.txt
-          fi
+          node scripts/daily-green.js
           python scripts/generate_activity.py
 
-      - name: Commit changes
+      - name: Commit the bloom
         run: |
           set -euo pipefail
-          git config user.name "ahmadrz1379"
-          git config user.email "aahmadrezarezaee@gmail.com"
-          git add .
+          git config user.name "Green Graph Bot"
+          git config user.email "green-graph-bot@users.noreply.github.com"
+          git add README.md log.txt data/green-status.json activity.json
           if git diff --cached --quiet; then
             echo "No repository changes to commit."
             exit 0
           fi
-          git commit -m "daily green update - $(date -u '+%Y-%m-%d')"
-          git push origin HEAD:main
+          git commit -m "🌿 grow the garden $(date -u '+%Y-%m-%d')"
+          git push origin HEAD:${{ github.ref_name }}

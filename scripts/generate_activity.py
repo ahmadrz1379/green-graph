@@ -10,9 +10,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 LOG_PATH = ROOT / "log.txt"
 OUTPUT_PATH = ROOT / "activity.json"
-LINE_PATTERN = re.compile(
+LEGACY_LINE_PATTERN = re.compile(
     r"(?P<date>[A-Z][a-z]{2}\s+[A-Z][a-z]{2}\s+\d{1,2}\s+\d{2}:\d{2}:\d{2}\s+UTC\s+\d{4})"
 )
+ISO_LINE_PATTERN = re.compile(r"(?P<date>\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?Z)")
 
 
 def parse_commit_dates() -> list[datetime]:
@@ -24,12 +25,17 @@ def parse_commit_dates() -> list[datetime]:
         if not raw_line.strip():
             continue
 
-        match = LINE_PATTERN.search(raw_line)
-        if not match:
-            continue
-
+        legacy_match = LEGACY_LINE_PATTERN.search(raw_line)
+        iso_match = ISO_LINE_PATTERN.search(raw_line)
         try:
-            parsed = datetime.strptime(match.group("date"), "%a %b %d %H:%M:%S UTC %Y")
+            if legacy_match:
+                parsed = datetime.strptime(legacy_match.group("date"), "%a %b %d %H:%M:%S UTC %Y")
+            elif iso_match:
+                parsed = datetime.fromisoformat(iso_match.group("date").replace("Z", "+00:00")).replace(
+                    tzinfo=None
+                )
+            else:
+                continue
         except ValueError:
             continue
 

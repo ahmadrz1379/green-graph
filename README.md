@@ -1,35 +1,36 @@
-# Green Graph
+# 🌿 Green Graph Garden
 
-A tiny daily-commit ritual turned into a polished contribution dashboard.
+> A tiny ritual for keeping the GitHub contribution graph lush, playful, and alive.
 
-The project keeps a repository alive by making a small automated commit every day, then visualizes the streak, momentum, and heatmap in a clean web dashboard.
+## 🌱 Today’s growth report
 
-## What is included
+- ✨ Mood: Aurora Energy
+- 🌾 Focus: Build something delightful, then keep going.
+- 📈 Current streak: 1 day
+- 🌍 Total green days: 1
+- ⚡ Energy: 69%
+- 🧠 Latest move: fed the graph with optimism
+- 📅 Last 7 days: ✨ 09-20
+- ✨ Sparkline: · · · · · · ▆
 
-- Daily GitHub Actions automation to push a fresh commit
-- A generated `activity.json` dataset from the commit log
-- A modern dashboard at `index.html` showing:
-  - total commits
-  - active days
-  - current streak
-  - best streak
-  - heatmap and monthly momentum
+## 🌼 Why this project is cool
 
-## Local development
+This repo turns a regular daily commit into a tiny botanic experience.
+Each run adds a bit of joy to the log, refreshes the README, and keeps the graph looking alive.
+The idea is simple: small daily actions compound into something beautiful.
 
-```bash
-npm test
-npm start
-```
+## 📊 Dashboard
 
-Then open http://localhost:8000 in a browser.
+Open index.html to explore the contribution heatmap, current streak, best streak, and monthly momentum.
 
-## How it works
+For local development, run npm test to regenerate and validate activity.json, then npm start and visit http://localhost:8000.
 
-- `log.txt` stores the historical GitHub Actions commit entries
-- `scripts/generate_activity.py` parses the log and builds summary metrics
-- `index.html`, `styles.css`, and `app.js` render the live dashboard
+## 🏆 Daily ritual
 
-## Automation
+1. Water the repo with a fresh commit.
+2. Add a little momentum to the project.
+3. Keep the streak alive, one green day at a time.
 
-The workflow runs every day at 06:00 UTC and performs a fresh daily update. It also regenerates the contribution data before committing.
+## 📜 Last update
+
+The latest green check-in was recorded on 2026-09-20.
