@@ -36,7 +36,7 @@ function readJson(filePath, fallback) {
     const raw = fs.readFileSync(filePath, 'utf8');
     return raw ? JSON.parse(raw) : fallback;
   } catch {
-    throw new Error(`Could not parse ${filePath}`);
+    return fallback;
   }
 }
 
@@ -109,12 +109,6 @@ function buildReadme(state) {
 This repo turns a regular daily commit into a tiny botanic experience.
 Each run adds a bit of joy to the log, refreshes the README, and keeps the graph looking alive.
 The idea is simple: small daily actions compound into something beautiful.
-
-## 📊 Dashboard
-
-Open index.html to explore the contribution heatmap, current streak, best streak, and monthly momentum.
-
-For local development, run npm test to regenerate and validate activity.json, then npm start and visit http://localhost:8000.
 
 ## 🏆 Daily ritual
 

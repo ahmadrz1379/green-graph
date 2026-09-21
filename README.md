@@ -8,8 +8,8 @@
 - 🌾 Focus: Build something delightful, then keep going.
 - 📈 Current streak: 1 day
 - 🌍 Total green days: 1
-- ⚡ Energy: 69%
-- 🧠 Latest move: fed the graph with optimism
+- ⚡ Energy: 74%
+- 🧠 Latest move: planted a fresh commit
 - 📅 Last 7 days: ✨ 09-20
 - ✨ Sparkline: · · · · · · ▆
 
@@ -18,12 +18,6 @@
 This repo turns a regular daily commit into a tiny botanic experience.
 Each run adds a bit of joy to the log, refreshes the README, and keeps the graph looking alive.
 The idea is simple: small daily actions compound into something beautiful.
-
-## 📊 Dashboard
-
-Open index.html to explore the contribution heatmap, current streak, best streak, and monthly momentum.
-
-For local development, run npm test to regenerate and validate activity.json, then npm start and visit http://localhost:8000.
 
 ## 🏆 Daily ritual
 
