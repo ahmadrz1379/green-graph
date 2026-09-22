@@ -1,99 +1,450 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Green Graph Dashboard</title>
-    <meta
-      name="description"
-      content="A polished dashboard tracking daily GitHub activity, contribution streaks, and momentum."
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="page-shell">
-      <header class="topbar">
-        <div class="brand-block">
-          <div class="brand-mark">G</div>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Green Graph Garden — a small daily ritual for a GitHub repo</title>
+<meta name="description" content="Green Graph Garden is a lightweight GitHub Action that waters a repository on a schedule, turning routine upkeep into a small, honest, botanical ritual. Open source, MIT licensed." />
+<meta name="keywords" content="green graph garden, github action, automation script, daily commit script, open source, node.js, python" />
+<meta name="author" content="ahmadrz1379" />
+<link rel="canonical" href="https://ahmadrz1379.github.io/green-graph/" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Green Graph Garden" />
+<meta property="og:description" content="A small, transparent GitHub Action that waters a repository on a schedule — a tiny botanical ritual, not a productivity metric." />
+<meta property="og:url" content="https://ahmadrz1379.github.io/green-graph/" />
+<meta property="og:image" content="https://ahmadrz1379.github.io/green-graph/og-card.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Green Graph Garden" />
+<meta name="twitter:description" content="A small, transparent GitHub Action that waters a repository on a schedule." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareSourceCode",
+  "name": "Green Graph Garden",
+  "description": "A lightweight GitHub Action that commits a scheduled update to a repository, turning routine upkeep into a small, transparent ritual.",
+  "codeRepository": "https://github.com/ahmadrz1379/green-graph",
+  "programmingLanguage": ["JavaScript", "Python"],
+  "license": "https://github.com/ahmadrz1379/green-graph/blob/main/LICENSE",
+  "author": {
+    "@type": "Person",
+    "name": "ahmadrz1379",
+    "url": "https://github.com/ahmadrz1379"
+  }
+}
+</script>
+
+<style>
+  :root{
+    --paper: #ece6d3;
+    --paper-deep: #e3dcc4;
+    --rule: #c7bd9d;
+    --ink: #232f1e;
+    --ink-soft: #4d5843;
+    --moss: #48643a;
+    --moss-deep: #33472a;
+    --gold: #b8862f;
+    --berry: #8a3b4a;
+    --card-bg: #f5f1e3;
+    --shadow: rgba(35, 47, 30, 0.14);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+
+  body{
+    margin:0;
+    background:
+      repeating-linear-gradient(0deg, transparent, transparent 27px, var(--rule) 27px, var(--rule) 28px),
+      repeating-linear-gradient(90deg, transparent, transparent 27px, var(--rule) 27px, var(--rule) 28px),
+      var(--paper);
+    background-attachment: fixed;
+    color: var(--ink);
+    font-family: "IBM Plex Sans", system-ui, sans-serif;
+    line-height: 1.6;
+  }
+
+  a{ color: inherit; }
+
+  .wrap{
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  header.top{
+    padding: 28px 0 0;
+  }
+  .top-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 18px;
+  }
+  .mark{
+    display:flex;
+    align-items:center;
+    gap: 10px;
+    font-family:"IBM Plex Mono", monospace;
+    font-size: 13px;
+    letter-spacing: 0.02em;
+    color: var(--ink-soft);
+  }
+  .mark svg{ display:block; }
+  .repo-link{
+    font-family:"IBM Plex Mono", monospace;
+    font-size: 13px;
+    text-decoration: none;
+    border-bottom: 1px solid var(--moss);
+    color: var(--moss-deep);
+    padding-bottom: 1px;
+  }
+  .repo-link:hover{ color: var(--berry); border-color: var(--berry); }
+
+  /* hero */
+  .hero{
+    padding: 64px 0 40px;
+  }
+  .hero h1{
+    font-family: "Fraunces", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    line-height: 1.08;
+    margin: 0 0 20px;
+    max-width: 15ch;
+    color: var(--moss-deep);
+  }
+  .hero p.lede{
+    max-width: 56ch;
+    font-size: 1.08rem;
+    color: var(--ink-soft);
+    margin: 0 0 28px;
+  }
+  .hero-actions{
+    display:flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap: 8px;
+    padding: 11px 20px;
+    border-radius: 3px;
+    font-size: 0.95rem;
+    text-decoration:none;
+    font-weight: 500;
+  }
+  .btn.primary{
+    background: var(--moss-deep);
+    color: var(--paper);
+  }
+  .btn.primary:hover{ background: var(--moss); }
+  .btn.ghost{
+    border: 1px solid var(--rule);
+    color: var(--ink);
+  }
+  .btn.ghost:hover{ border-color: var(--moss); color: var(--moss-deep); }
+
+  /* grid marker — literal graph paper motif tying to "graph" in the name */
+  .grid-figure{
+    margin-top: 46px;
+    display:grid;
+    grid-template-columns: repeat(26, 1fr);
+    gap: 4px;
+    max-width: 560px;
+  }
+  .grid-figure span{
+    aspect-ratio: 1;
+    border-radius: 2px;
+    background: var(--rule);
+    opacity: 0.55;
+  }
+  .grid-figure span.on{ background: var(--moss); opacity: 0.9; }
+  .grid-figure span.on2{ background: var(--gold); opacity: 0.85; }
+
+  /* stats */
+  section.stats{
+    padding: 40px 0 12px;
+    border-top: 1px solid var(--rule);
+  }
+  .stats h2, section.about h2, section.how h2, section.honest h2{
+    font-family:"Fraunces", serif;
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: var(--moss-deep);
+    margin: 0 0 18px;
+  }
+  .stat-row{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+  }
+  .stat-cell{
+    background: var(--card-bg);
+    padding: 18px 16px;
+  }
+  .stat-cell .num{
+    font-family:"IBM Plex Mono", monospace;
+    font-size: 1.7rem;
+    color: var(--berry);
+    display:block;
+  }
+  .stat-cell .label{
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+    margin-top: 4px;
+    display:block;
+  }
+  .stats-note{
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    margin-top: 10px;
+  }
+
+  @media (max-width: 600px){
+    .stat-row{ grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* about / how */
+  section.about, section.how, section.honest{
+    padding: 44px 0;
+    border-top: 1px solid var(--rule);
+  }
+  section.about p{ max-width: 62ch; color: var(--ink-soft); }
+
+  .steps{
+    display:grid;
+    gap: 14px;
+    margin-top: 20px;
+  }
+  .step{
+    display:grid;
+    grid-template-columns: 34px 1fr;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px dashed var(--rule);
+  }
+  .step:last-child{ border-bottom: none; }
+  .step .n{
+    font-family:"IBM Plex Mono", monospace;
+    color: var(--gold);
+    font-size: 0.95rem;
+  }
+  .step h3{
+    margin: 0 0 4px;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  .step p{ margin:0; color: var(--ink-soft); font-size: 0.95rem; }
+  .step code{
+    font-family:"IBM Plex Mono", monospace;
+    background: var(--paper-deep);
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-size: 0.85em;
+  }
+
+  section.honest{
+    background: var(--card-bg);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 28px;
+  }
+  section.honest p{ color: var(--ink-soft); max-width: 62ch; }
+  section.honest .flag{
+    font-family:"IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.03em;
+    color: var(--berry);
+    display:block;
+    margin-bottom: 10px;
+  }
+
+  footer{
+    padding: 36px 0 60px;
+    border-top: 1px solid var(--rule);
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    display:flex;
+    justify-content:space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  footer a{ color: var(--moss-deep); text-decoration: none; border-bottom: 1px solid var(--rule); }
+  footer a:hover{ border-color: var(--moss-deep); }
+
+  @media (prefers-reduced-motion: no-preference){
+    .grid-figure span{ transition: opacity 0.4s ease; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <div class="top-row">
+      <div class="mark">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="18" height="18" rx="3" fill="#48643A"/>
+          <path d="M4 12C4 8 7 5 13 5C13 9 10 12 6 12H4Z" fill="#ECE6D3"/>
+        </svg>
+        green-graph / garden
+      </div>
+      <a class="repo-link" href="https://github.com/ahmadrz1379/green-graph" target="_blank" rel="noreferrer">
+        Source on GitHub ↗
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>A small, honest ritual for a repository that would otherwise sit still.</h1>
+      <p class="lede">
+        Green Graph Garden is a GitHub Action that touches this repo on a timer — refreshing a log,
+        a status file, and this README — the way you might water a plant on your desk. It's decorative
+        automation, built and labeled as exactly that.
+      </p>
+      <div class="hero-actions">
+        <a class="btn primary" href="https://github.com/ahmadrz1379/green-graph" target="_blank" rel="noreferrer">View the code</a>
+        <a class="btn ghost" href="#how">How it works</a>
+      </div>
+
+      <div class="grid-figure" id="grid-figure" aria-hidden="true"></div>
+    </section>
+
+    <section class="stats" aria-labelledby="stats-heading">
+      <h2 id="stats-heading">Repository, as reported by GitHub</h2>
+      <div class="stat-row" id="stat-row">
+        <div class="stat-cell"><span class="num" id="stat-stars">—</span><span class="label">Stars</span></div>
+        <div class="stat-cell"><span class="num" id="stat-forks">—</span><span class="label">Forks</span></div>
+        <div class="stat-cell"><span class="num" id="stat-issues">—</span><span class="label">Open issues</span></div>
+        <div class="stat-cell"><span class="num" id="stat-updated">—</span><span class="label">Last push</span></div>
+      </div>
+      <p class="stats-note">Pulled live from the GitHub API at page load — not stored or generated by this site.</p>
+    </section>
+
+    <section class="about">
+      <h2>What it actually does</h2>
+      <p>
+        On a schedule, a small Node script and a small Python script run inside a GitHub Actions
+        workflow. They rewrite a status file and a short growth report in the README, then commit
+        that change. There's no task list, no real work log — it's a scheduled write, dressed up
+        in a garden theme because that's more pleasant to look at than a cron job.
+      </p>
+      <p>
+        It exists as a bit of fun around GitHub automation, not as a record of actual coding
+        activity — the sections below say that plainly, on purpose.
+      </p>
+    </section>
+
+    <section class="how" id="how">
+      <h2>How it runs</h2>
+      <div class="steps">
+        <div class="step">
+          <span class="n">01</span>
           <div>
-            <p class="eyebrow">Project pulse</p>
-            <h1>Green Graph</h1>
+            <h3>A schedule fires</h3>
+            <p>The workflow in <code>.github/workflows/daily-commit.yml</code> runs on a cron trigger, or on demand.</p>
           </div>
         </div>
-        <a class="repo-link" href="https://github.com/ahmadrz1379/green-graph" target="_blank" rel="noreferrer">
-          View repo
-        </a>
-      </header>
-
-      <main class="dashboard">
-        <section class="hero">
-          <div class="hero-copy">
-            <p class="eyebrow">Daily automation ritual</p>
-            <h2>Keep the graph green.</h2>
-            <p class="detail-text">
-              Every sunrise triggers a tiny commit to keep the repository alive, visible, and active.
-            </p>
-            <div class="pill-row">
-              <span class="status-pill">Live repo pulse</span>
-              <span class="status-pill accent" id="status-pill">Loading…</span>
-            </div>
+        <div class="step">
+          <span class="n">02</span>
+          <div>
+            <h3>Two scripts update local files</h3>
+            <p><code>scripts/daily-green.js</code> and <code>scripts/generate_activity.py</code> rewrite <code>log.txt</code>, <code>data/green-status.json</code>, and <code>activity.json</code>.</p>
           </div>
-
-          <div class="hero-panel">
-            <div class="mini-stat">
-              <span>Current streak</span>
-              <strong id="metric-currentStreak">--</strong>
-            </div>
-            <div class="mini-stat">
-              <span>Best streak</span>
-              <strong id="metric-bestStreak">--</strong>
-            </div>
-            <div class="mini-stat">
-              <span>Last commit</span>
-              <strong id="metric-lastCommit">--</strong>
-            </div>
+        </div>
+        <div class="step">
+          <span class="n">03</span>
+          <div>
+            <h3>The README is refreshed</h3>
+            <p>A short "today's growth report" section is regenerated with new placeholder mood and streak text.</p>
           </div>
-        </section>
+        </div>
+        <div class="step">
+          <span class="n">04</span>
+          <div>
+            <h3>One commit, pushed by the bot</h3>
+            <p>Authored as <code>Green Graph Bot</code>, so it's clearly attributed to automation, not a person.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <section class="metrics-grid" aria-label="Summary metrics">
-          <article class="metric-card">
-            <p>Total commits</p>
-            <strong id="metric-totalCommits">--</strong>
-          </article>
-          <article class="metric-card">
-            <p>Active days</p>
-            <strong id="metric-activeDays">--</strong>
-          </article>
-          <article class="metric-card">
-            <p>Avg / active day</p>
-            <strong id="metric-average">--</strong>
-          </article>
-          <article class="metric-card">
-            <p>Momentum</p>
-            <strong id="metric-momentum">--</strong>
-          </article>
-        </section>
+    <section class="honest">
+      <span class="flag">Plain-language note</span>
+      <h2 style="margin-top:0;">This isn't a coding-activity signal</h2>
+      <p>
+        A GitHub contribution graph is meant to show real work. This project generates commits on
+        a timer, so any streak or count it produces reflects the schedule, not effort — it shouldn't
+        be read by anyone (including future-you) as evidence of actual development activity. Treat
+        it as what it is: a small automated repo ritual, not a résumé line.
+      </p>
+    </section>
+  </main>
 
-        <section class="content-grid">
-          <article class="panel">
-            <div class="panel-header">
-              <h3>Contribution heatmap</h3>
-              <span id="heatmap-range">Last 8 weeks</span>
-            </div>
-            <div id="heatmap" class="heatmap" aria-label="Daily contribution chart"></div>
-          </article>
+  <footer>
+    <span>Green Graph Garden — MIT licensed, built for fun.</span>
+    <a href="https://github.com/ahmadrz1379/green-graph" target="_blank" rel="noreferrer">github.com/ahmadrz1379/green-graph</a>
+  </footer>
+</div>
 
-          <article class="panel">
-            <div class="panel-header">
-              <h3>Monthly momentum</h3>
-              <span>By month</span>
-            </div>
-            <div id="monthly-bars" class="monthly-bars" aria-label="Monthly contribution bars"></div>
-          </article>
-        </section>
-      </main>
-    </div>
+<script>
+  // Literal graph-paper motif: a small static pattern, not a data visualization.
+  (function renderGrid(){
+    const el = document.getElementById('grid-figure');
+    if (!el) return;
+    const total = 26 * 3;
+    let html = '';
+    for (let i = 0; i < total; i++){
+      const r = Math.random();
+      const cls = r > 0.85 ? 'on2' : (r > 0.62 ? 'on' : '');
+      html += `<span class="${cls}"></span>`;
+    }
+    el.innerHTML = html;
+  })();
 
-    <script src="app.js"></script>
-  </body>
+  // Real, live repo stats from the GitHub API — no fabricated numbers.
+  (async function loadStats(){
+    const els = {
+      stars: document.getElementById('stat-stars'),
+      forks: document.getElementById('stat-forks'),
+      issues: document.getElementById('stat-issues'),
+      updated: document.getElementById('stat-updated'),
+    };
+    try{
+      const res = await fetch('https://api.github.com/repos/ahmadrz1379/green-graph', {
+        headers: { 'Accept': 'application/vnd.github+json' }
+      });
+      if (!res.ok) throw new Error('GitHub API error ' + res.status);
+      const data = await res.json();
+      els.stars.textContent = data.stargazers_count ?? '—';
+      els.forks.textContent = data.forks_count ?? '—';
+      els.issues.textContent = data.open_issues_count ?? '—';
+      if (data.pushed_at){
+        const d = new Date(data.pushed_at);
+        els.updated.textContent = d.toLocaleDateString(undefined, { month: 'short', day: 'numeric' });
+      }
+    } catch (err){
+      Object.values(els).forEach(el => { if (el) el.textContent = 'n/a'; });
+      const note = document.querySelector('.stats-note');
+      if (note) note.textContent = 'Live stats unavailable right now (rate-limited or offline) — this section always pulls from the GitHub API directly, never stored data.';
+    }
+  })();
+</script>
+
+</body>
 </html>
