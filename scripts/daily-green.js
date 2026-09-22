@@ -93,6 +93,8 @@ function buildReadme(state) {
 
 > A tiny ritual for keeping the GitHub contribution graph lush, playful, and alive.
 
+🔗 [Live page](https://ahmadrz1379.github.io/green-graph/) · 💬 [Telegram: @ahmadrezarezaee](https://t.me/ahmadrezarezaee)
+
 ## 🌱 Today’s growth report
 
 - ${mood.emoji} Mood: ${mood.name}
