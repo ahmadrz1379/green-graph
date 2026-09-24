@@ -10,8 +10,8 @@
 - 🌾 Focus: Even drizzle turns into green momentum.
 - 📈 Current streak: 5 days
 - 🌍 Total green days: 5
-- ⚡ Energy: 82%
-- 🧠 Latest move: made the project prettier
+- ⚡ Energy: 73%
+- 🧠 Latest move: added a little joy to the code
 - 📅 Last 7 days: ✨ 09-20 • 🌼 09-21 • 🌞 09-22 • 🌿 09-23 • 🌧️ 09-24
 - ✨ Sparkline: · · ▆ ▆ ▆ ▆ ▆
 
