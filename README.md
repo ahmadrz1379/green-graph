@@ -10,8 +10,8 @@
 - 🌾 Focus: Build something delightful, then keep going.
 - 📈 Current streak: 19 days
 - 🌍 Total green days: 19
-- ⚡ Energy: 100%
-- 🧠 Latest move: trimmed a little friction
+- ⚡ Energy: 87%
+- 🧠 Latest move: kept the streak alive
 - 📅 Last 7 days: ✨ 10-02 • 🌼 10-03 • 🌞 10-04 • 🌿 10-05 • 🌧️ 10-06 • 🌙 10-07 • ✨ 10-08
 - ✨ Sparkline: ▇ ▇ ▇ ▇ ▇ ▇ ▇
 
