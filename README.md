@@ -10,8 +10,8 @@
 - 🌾 Focus: Momentum is a habit, not a mood.
 - 📈 Current streak: 20 days
 - 🌍 Total green days: 20
-- ⚡ Energy: 92%
-- 🧠 Latest move: kept the streak alive
+- ⚡ Energy: 88%
+- 🧠 Latest move: made the project prettier
 - 📅 Last 7 days: 🌼 10-03 • 🌞 10-04 • 🌿 10-05 • 🌧️ 10-06 • 🌙 10-07 • ✨ 10-08 • 🌼 10-09
 - ✨ Sparkline: ▇ ▇ ▇ ▇ ▇ ▇ ▇
 
