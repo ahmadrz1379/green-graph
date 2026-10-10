@@ -10,8 +10,8 @@
 - 🌾 Focus: Plant a fresh idea before the coffee cools.
 - 📈 Current streak: 21 days
 - 🌍 Total green days: 21
-- ⚡ Energy: 94%
-- 🧠 Latest move: made the project prettier
+- ⚡ Energy: 68%
+- 🧠 Latest move: added a little joy to the code
 - 📅 Last 7 days: 🌞 10-04 • 🌿 10-05 • 🌧️ 10-06 • 🌙 10-07 • ✨ 10-08 • 🌼 10-09 • 🌞 10-10
 - ✨ Sparkline: ▇ ▇ ▇ ▇ ▇ ▇ ▇
 
