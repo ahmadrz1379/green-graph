@@ -10,8 +10,8 @@
 - 🌾 Focus: Keep the streak growing with one tiny win.
 - 📈 Current streak: 22 days
 - 🌍 Total green days: 22
-- ⚡ Energy: 96%
-- 🧠 Latest move: added a little joy to the code
+- ⚡ Energy: 69%
+- 🧠 Latest move: watered the repo
 - 📅 Last 7 days: 🌿 10-05 • 🌧️ 10-06 • 🌙 10-07 • ✨ 10-08 • 🌼 10-09 • 🌞 10-10 • 🌿 10-11
 - ✨ Sparkline: ▇ ▇ ▇ ▇ ▇ ▇ █
 
