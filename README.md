@@ -6,14 +6,14 @@
 
 ## 🌱 Today’s growth report
 
-- 🌙 Mood: Moonlit Growth
-- 🌾 Focus: Ship a small improvement and rest beautifully.
-- 📈 Current streak: 24 days
-- 🌍 Total green days: 24
-- ⚡ Energy: 71%
+- ✨ Mood: Aurora Energy
+- 🌾 Focus: Build something delightful, then keep going.
+- 📈 Current streak: 25 days
+- 🌍 Total green days: 25
+- ⚡ Energy: 77%
 - 🧠 Latest move: planted a fresh commit
-- 📅 Last 7 days: 🌙 10-07 • ✨ 10-08 • 🌼 10-09 • 🌞 10-10 • 🌿 10-11 • 🌧️ 10-12 • 🌙 10-13
-- ✨ Sparkline: ▇ ▇ ▇ ▇ █ █ █
+- 📅 Last 7 days: ✨ 10-08 • 🌼 10-09 • 🌞 10-10 • 🌿 10-11 • 🌧️ 10-12 • 🌙 10-13 • ✨ 10-14
+- ✨ Sparkline: ▇ ▇ ▇ █ █ █ █
 
 ## 🌼 Why this project is cool
 
@@ -29,4 +29,4 @@ The idea is simple: small daily actions compound into something beautiful.
 
 ## 📜 Last update
 
-The latest green check-in was recorded on 2026-10-13.
+The latest green check-in was recorded on 2026-10-14.
