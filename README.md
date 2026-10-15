@@ -10,8 +10,8 @@
 - 🌾 Focus: Momentum is a habit, not a mood.
 - 📈 Current streak: 26 days
 - 🌍 Total green days: 26
-- ⚡ Energy: 79%
-- 🧠 Latest move: fed the graph with optimism
+- ⚡ Energy: 73%
+- 🧠 Latest move: trimmed a little friction
 - 📅 Last 7 days: 🌼 10-09 • 🌞 10-10 • 🌿 10-11 • 🌧️ 10-12 • 🌙 10-13 • ✨ 10-14 • 🌼 10-15
 - ✨ Sparkline: ▇ ▇ █ █ █ █ ▆
 
