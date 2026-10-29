@@ -11,7 +11,7 @@
 - 📈 Current streak: 40 days
 - 🌍 Total green days: 40
 - ⚡ Energy: 87%
-- 🧠 Latest move: sparked a tiny upgrade
+- 🧠 Latest move: planted a fresh commit
 - 📅 Last 7 days: 🌿 10-23 • 🌧️ 10-24 • 🌙 10-25 • ✨ 10-26 • 🌼 10-27 • 🌞 10-28 • 🌿 10-29
 - ✨ Sparkline: ▇ ▇ ▇ ▇ ▇ ▇ ▇
 
