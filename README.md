@@ -10,8 +10,8 @@
 - 🌾 Focus: Ship a small improvement and rest beautifully.
 - 📈 Current streak: 48 days
 - 🌍 Total green days: 48
-- ⚡ Energy: 100%
-- 🧠 Latest move: sparked a tiny upgrade
+- ⚡ Energy: 74%
+- 🧠 Latest move: planted a fresh commit
 - 📅 Last 7 days: 🌙 10-31 • ✨ 11-01 • 🌼 11-02 • 🌞 11-03 • 🌿 11-04 • 🌧️ 11-05 • 🌙 11-06
 - ✨ Sparkline: ▇ ▇ ▇ ▇ ▇ █ █
 
