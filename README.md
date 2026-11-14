@@ -6,14 +6,14 @@
 
 ## 🌱 Today’s growth report
 
-- ✨ Mood: Aurora Energy
-- 🌾 Focus: Build something delightful, then keep going.
-- 📈 Current streak: 55 days
-- 🌍 Total green days: 55
-- ⚡ Energy: 81%
+- 🌼 Mood: Wildflower Rush
+- 🌾 Focus: Momentum is a habit, not a mood.
+- 📈 Current streak: 56 days
+- 🌍 Total green days: 56
+- ⚡ Energy: 84%
 - 🧠 Latest move: sparked a tiny upgrade
-- 📅 Last 7 days: ✨ 11-07 • 🌼 11-08 • 🌞 11-09 • 🌿 11-10 • 🌧️ 11-11 • 🌙 11-12 • ✨ 11-13
-- ✨ Sparkline: █ █ ▆ ▆ ▆ ▆ ▆
+- 📅 Last 7 days: 🌼 11-08 • 🌞 11-09 • 🌿 11-10 • 🌧️ 11-11 • 🌙 11-12 • ✨ 11-13 • 🌼 11-14
+- ✨ Sparkline: █ ▆ ▆ ▆ ▆ ▆ ▆
 
 ## 🌼 Why this project is cool
 
@@ -29,4 +29,4 @@ The idea is simple: small daily actions compound into something beautiful.
 
 ## 📜 Last update
 
-The latest green check-in was recorded on 2026-11-13.
+The latest green check-in was recorded on 2026-11-14.
