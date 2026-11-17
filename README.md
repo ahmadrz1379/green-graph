@@ -6,14 +6,14 @@
 
 ## 🌱 Today’s growth report
 
-- 🌿 Mood: Forest Glow
-- 🌾 Focus: Keep the streak growing with one tiny win.
-- 📈 Current streak: 58 days
-- 🌍 Total green days: 58
-- ⚡ Energy: 84%
+- 🌧️ Mood: Rainy Spark
+- 🌾 Focus: Even drizzle turns into green momentum.
+- 📈 Current streak: 59 days
+- 🌍 Total green days: 59
+- ⚡ Energy: 90%
 - 🧠 Latest move: trimmed a little friction
-- 📅 Last 7 days: 🌿 11-10 • 🌧️ 11-11 • 🌙 11-12 • ✨ 11-13 • 🌼 11-14 • 🌞 11-15 • 🌿 11-16
-- ✨ Sparkline: ▆ ▆ ▆ ▆ ▆ ▆ ▇
+- 📅 Last 7 days: 🌧️ 11-11 • 🌙 11-12 • ✨ 11-13 • 🌼 11-14 • 🌞 11-15 • 🌿 11-16 • 🌧️ 11-17
+- ✨ Sparkline: ▆ ▆ ▆ ▆ ▆ ▇ ▇
 
 ## 🌼 Why this project is cool
 
@@ -29,4 +29,4 @@ The idea is simple: small daily actions compound into something beautiful.
 
 ## 📜 Last update
 
-The latest green check-in was recorded on 2026-11-16.
+The latest green check-in was recorded on 2026-11-17.
