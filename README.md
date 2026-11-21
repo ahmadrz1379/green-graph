@@ -10,8 +10,8 @@
 - 🌾 Focus: Plant a fresh idea before the coffee cools.
 - 📈 Current streak: 63 days
 - 🌍 Total green days: 63
-- ⚡ Energy: 88%
-- 🧠 Latest move: watered the repo
+- ⚡ Energy: 68%
+- 🧠 Latest move: sparked a tiny upgrade
 - 📅 Last 7 days: 🌞 11-15 • 🌿 11-16 • 🌧️ 11-17 • 🌙 11-18 • ✨ 11-19 • 🌼 11-20 • 🌞 11-21
 - ✨ Sparkline: ▆ ▇ ▇ ▇ ▇ ▇ ▇
 
