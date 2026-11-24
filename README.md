@@ -10,8 +10,8 @@
 - 🌾 Focus: Ship a small improvement and rest beautifully.
 - 📈 Current streak: 66 days
 - 🌍 Total green days: 66
-- ⚡ Energy: 94%
-- 🧠 Latest move: fed the graph with optimism
+- ⚡ Energy: 71%
+- 🧠 Latest move: trimmed a little friction
 - 📅 Last 7 days: 🌙 11-18 • ✨ 11-19 • 🌼 11-20 • 🌞 11-21 • 🌿 11-22 • 🌧️ 11-23 • 🌙 11-24
 - ✨ Sparkline: ▇ ▇ ▇ ▇ ▇ ▇ ▇
 
